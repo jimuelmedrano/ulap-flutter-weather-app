@@ -1,3 +1,5 @@
+import 'package:intl/intl.dart';
+
 String getTimeFromEpoch(epoch) {
   final dateTimeFromEpoch = DateTime.fromMillisecondsSinceEpoch(epoch * 1000);
   String hour = '${dateTimeFromEpoch.hour}';
@@ -10,4 +12,9 @@ String getTimeFromEpoch(epoch) {
   }
   final String formattedTime = '$hour:$minute';
   return formattedTime;
+}
+
+String getTimeFromTimestamp(timestamp) {
+  final time = DateTime.parse(timestamp);
+  return DateFormat.Hm().format(time);
 }

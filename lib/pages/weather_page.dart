@@ -56,7 +56,6 @@ class _WeatherPageState extends State<WeatherPage> {
           final currentWeatherDesc = data[0]['weather'][0]['description'];
           final currentHumidity = data[0]['main']['humidity'];
           final currentWindSpeed = data[0]['wind']['speed'];
-          final currentPressure = data[0]['main']['pressure'];
           final sunriseEpoch = data[0]['sys']['sunrise'];
           final sunsetEpoch = data[0]['sys']['sunset'];
 
@@ -105,7 +104,8 @@ class _WeatherPageState extends State<WeatherPage> {
                     children: [
                       for (int i = 0; i <= 7; i++)
                         ForecastWidget(
-                          hour: getTimeFromEpoch(data[1]['list'][i]['dt']),
+                          hour: getTimeFromTimestamp(
+                              data[1]['list'][i]['dt_txt']),
                           weatherIcon: getWeatherIcon(
                               data[1]['list'][i]['weather'][0]['main']),
                           temp: '${data[1]['list'][i]['main']['temp']}°C',
