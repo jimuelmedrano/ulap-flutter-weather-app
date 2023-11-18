@@ -134,7 +134,6 @@ class _WeatherPageState extends State<WeatherPage> {
                           'Humidity',
                           style: TextStyle(fontSize: 16),
                         ),
-                        const SizedBox(height: 5),
                         Text(
                           '$currentHumidity%',
                           style: const TextStyle(
@@ -154,7 +153,6 @@ class _WeatherPageState extends State<WeatherPage> {
                           'Wind Speed',
                           style: TextStyle(fontSize: 16),
                         ),
-                        const SizedBox(height: 5),
                         Text(
                           '$currentWindSpeed m/s',
                           style: const TextStyle(
@@ -166,46 +164,38 @@ class _WeatherPageState extends State<WeatherPage> {
                       children: [
                         const SizedBox(height: 5),
                         const Icon(
-                          Icons.wind_power,
+                          Icons.sunny,
                           size: 40,
                         ),
                         const SizedBox(height: 5),
                         const Text(
-                          'Pressure',
+                          'Sunrise',
                           style: TextStyle(fontSize: 16),
                         ),
-                        const SizedBox(height: 5),
-                        Text(
-                          '$currentPressure hPa',
-                          style: const TextStyle(
-                              fontSize: 16, fontWeight: FontWeight.bold),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 25),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Column(
-                      children: [
                         Text(
                           getTimeFromEpoch(sunriseEpoch),
                           style: const TextStyle(
                               fontSize: 16, fontWeight: FontWeight.bold),
                         ),
-                        const Text('Sunrise')
                       ],
                     ),
                     Column(
                       children: [
+                        const SizedBox(height: 5),
+                        const Icon(
+                          Icons.sunny_snowing,
+                          size: 40,
+                        ),
+                        const SizedBox(height: 5),
+                        const Text(
+                          'Sunset',
+                          style: TextStyle(fontSize: 16),
+                        ),
                         Text(
                           getTimeFromEpoch(sunsetEpoch),
                           style: const TextStyle(
                               fontSize: 16, fontWeight: FontWeight.bold),
                         ),
-                        const Text('Sunset')
                       ],
                     ),
                   ],
