@@ -95,7 +95,7 @@ class _WeatherPageState extends State<WeatherPage> {
                 const SizedBox(height: 15),
                 const Text(
                   'Weather Forecast',
-                  style: TextStyle(fontSize: 24),
+                  style: TextStyle(fontSize: 20),
                 ),
                 const SizedBox(height: 10),
                 SingleChildScrollView(
@@ -116,7 +116,7 @@ class _WeatherPageState extends State<WeatherPage> {
                 const SizedBox(height: 15),
                 const Text(
                   'Additional Information',
-                  style: TextStyle(fontSize: 24),
+                  style: TextStyle(fontSize: 20),
                 ),
                 const SizedBox(height: 10),
                 Row(
