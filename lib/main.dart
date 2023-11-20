@@ -16,7 +16,11 @@ class UlapApp extends StatelessWidget {
     return MaterialApp(
       title: 'Ulap Weather',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(useMaterial3: true, brightness: Brightness.dark),
+      theme: ThemeData(
+        useMaterial3: true,
+        colorSchemeSeed: Colors.blueAccent,
+        brightness: Brightness.dark,
+      ),
       home: const WeatherPage(),
     );
   }
