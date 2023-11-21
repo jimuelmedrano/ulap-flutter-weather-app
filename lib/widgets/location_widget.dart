@@ -70,7 +70,8 @@ class _LocationWidgetState extends State<LocationWidget> {
 
   void searchFilter(String query) {
     final suggestions = widget.listCities.where((element) {
-      final cityName = element.city.toLowerCase();
+      final cityName =
+          '${element.city.toLowerCase()}, ${element.province.toLowerCase()}';
       final input = query.toLowerCase();
 
       return cityName.contains(input);
