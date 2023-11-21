@@ -7,6 +7,9 @@ String getTimeFromEpoch(epoch) {
   if (dateTimeFromEpoch.hour < 10) {
     hour = '0${dateTimeFromEpoch.hour}';
   }
+  if (dateTimeFromEpoch.minute < 10) {
+    minute = '0${dateTimeFromEpoch.minute}';
+  }
   if (dateTimeFromEpoch.minute == 0) {
     minute = '${dateTimeFromEpoch.minute}0';
   }
