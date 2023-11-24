@@ -33,8 +33,28 @@ class _LocationWidgetState extends State<LocationWidget> {
     return SingleChildScrollView(
       child: Column(
         children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              const Text(
+                'Set Location',
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              ),
+              GestureDetector(
+                onTap: () {
+                  widget.submit('');
+                },
+                child: const Text(
+                  'x ',
+                  style: TextStyle(
+                    fontSize: 20,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 15),
           TextField(
-            autofocus: true,
             controller: controller,
             onChanged: searchFilter,
             decoration: InputDecoration(
@@ -46,15 +66,37 @@ class _LocationWidgetState extends State<LocationWidget> {
                       BorderSide(color: Theme.of(context).hintColor, width: 1),
                 )),
           ),
+          TextButton(
+            onPressed: () {
+              widget.submit('current');
+            },
+            child: const Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(Icons.location_on),
+                Text(
+                  'Use Current Location',
+                  style: TextStyle(fontSize: 16),
+                ),
+              ],
+            ),
+          ),
+          const Divider(
+            height: 1,
+            color: Colors.white,
+            thickness: 1,
+            indent: 10,
+            endIndent: 10,
+          ),
           SizedBox(
               width: 500,
-              height: 300,
+              height: 350,
               child: ListView.builder(
                   itemCount: cityStateList.length,
                   itemBuilder: (context, index) {
                     final cityData = cityStateList[index];
                     return ListTile(
-                      leading: const Icon(Icons.location_on),
+                      leading: const Icon(Icons.location_city),
                       title: Text('${cityData.city}, ${cityData.province}'),
                       onTap: () {
                         controller.text = cityData.city;

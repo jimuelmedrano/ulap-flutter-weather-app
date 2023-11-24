@@ -21,3 +21,8 @@ String getTimeFromTimestamp(timestamp) {
   final time = DateTime.parse(timestamp);
   return DateFormat.Hm().format(time);
 }
+
+String getFormattedTimeFromTimestamp(timestamp) {
+  final time = DateTime.parse(timestamp);
+  return DateFormat('E, dd MMM yyyy hh:mm a').format(time);
+}
